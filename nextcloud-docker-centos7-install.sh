@@ -13,7 +13,7 @@ Installation script for Nextcloud on CentOS 7 using Docker
 "
 
 echo "updating CentOS"
-yum update
+sudo yum update
 
 echo "
 =============== Docker ===============
@@ -23,16 +23,16 @@ echo "downloading docker ce..."
 wget https://download.docker.com/linux/centos/docker-ce.repo -O /etc/yum.repos.d/docker.repo
 
 echo "installing docker ce..."
-yum install docker-ce –y
+sudo yum install docker-ce –y
 
 echo "starting docker..."
-systemctl start docker
-systemctl enable docker
+sudo systemctl start docker
+sudo systemctl enable docker
 
 echo "installing docker compose..."
-yum install epel-release
-yum install python-pip
-pip install docker-compose
+sudo yum install epel-release
+sudo yum install python-pip
+sudo pip install docker-compose
 docker-compose --version
 echo "docker install completed"
 
